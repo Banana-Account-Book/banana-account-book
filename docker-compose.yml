@@ -17,7 +17,8 @@ services:
     ports:
       - "3333:3333"
     volumes:
-      - ./server:/server
+      - ./server/cmd:/server/cmd
+      - ./server/internal:/server/internal
     depends_on:
       - db
   client:
@@ -25,10 +26,11 @@ services:
       context: ./client
       dockerfile: ../Dockerfile.client
     environment:
+      - PORT=3010
       - APP_ENV=development
     ports:
       - "3010:3010"
     volumes:
-      - ./client:/client
+      - ./client/src:/client/src
     depends_on:
       - server
