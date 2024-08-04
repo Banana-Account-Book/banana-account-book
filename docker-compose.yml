@@ -5,6 +5,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: banana
     ports:
       - "5432:5432"
   server:
@@ -14,6 +15,11 @@ services:
     environment:
       - APP_ENV=development
       - PORT=3333
+      - DB_USER=postgres
+      - DB_PASSWORD=1234
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=banana
     ports:
       - "3333:3333"
     volumes:
