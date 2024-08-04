@@ -19,6 +19,7 @@ services:
     volumes:
       - ./server/cmd:/server/cmd
       - ./server/internal:/server/internal
+    restart: always
     depends_on:
       - db
   client:
@@ -32,5 +33,7 @@ services:
       - "3010:3010"
     volumes:
       - ./client/src:/client/src
+      - ./client/public:/client/public
+    restart: always
     depends_on:
       - server
