@@ -13,6 +13,7 @@ services:
       context: ./server
       dockerfile: ../Dockerfile.server
     environment:
+      - ORIGIN=http://server:3010
       - APP_ENV=development
       - PORT=3333
       - DB_USER=postgres
