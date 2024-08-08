@@ -22,6 +22,7 @@ services:
       - DB_PORT=5432
       - DB_NAME=banana
       - SALT=10
+      - SECRET_KEY=banana
     ports:
       - "3333:3333"
     volumes:
