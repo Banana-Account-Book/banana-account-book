@@ -28,6 +28,7 @@ services:
     volumes:
       - ./server/cmd:/server/cmd
       - ./server/internal:/server/internal
+      - ./server/docs:/server/docs
     restart: always
     depends_on:
       - db
